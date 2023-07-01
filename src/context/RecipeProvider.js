@@ -42,6 +42,11 @@ function RecipeProvider({ children }) {
         const newData = [...state.data, action.payload];
         console.log("newData", newData);
         return { ...state, data: newData };
+      case "DELETE":
+        const newRecipe = state.data.filter(
+          (recipe, index) => index !== action.payload
+        );
+        return { ...state, data: newRecipe };
       default:
         return state.data;
     }

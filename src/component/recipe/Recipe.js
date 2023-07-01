@@ -8,11 +8,11 @@ import { useRecipe } from "../../context/RecipeProvider";
 function Recipe({ recipe, id }) {
   const navigate = useNavigate();
   const { state, dispatch } = useRecipe();
-  const handleDelete = {
-    //   dispatch({
-    //       type: "DELETE",
-    //       payload: recipeDetails,
-    //     });
+  const handleDelete = () => {
+    dispatch({
+      type: "DELETE",
+      payload: id,
+    });
   };
   return (
     <div>
